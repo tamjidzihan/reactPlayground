@@ -18,7 +18,6 @@ const useTodos = () => {
         queryKey: ['todos'],
         queryFn: fetchTodos
     })
-
 }
 
 export default useTodos
