@@ -9,14 +9,15 @@ interface Todo {
 }
 
 const useTodos = () => {
-    const fetchTodos = () =>
-        apiClint
-            .get<Todo[]>('/todos')
-            .then(res => res.data)
+    // const fetchTodos = () =>
+    //     apiClint
+    //         .get<Todo[]>('/todos')
+    //         .then(res => res.data)
 
     return useQuery<Todo[], Error>({
         queryKey: ['todos'],
-        queryFn: fetchTodos
+        queryFn: () => apiClint.get<Todo[]>('/todos').then(res => res.data),
+        staleTime: 10 * 1000
     })
 }
 

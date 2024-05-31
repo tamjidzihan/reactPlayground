@@ -3,7 +3,6 @@ import useTodos from './hooks/useTodos';
 const TodoList = () => {
   const { data, isLoading, error } = useTodos()
 
-
   if (isLoading) return <p>Loadong....</p>
   if (error) return <p>{error.message}</p>;
   return (
