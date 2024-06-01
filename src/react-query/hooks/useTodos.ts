@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import apiClint from "../services/api-clint";
 
-interface Todo {
+export interface Todo {
     id: number;
     title: string;
     userId: number;
