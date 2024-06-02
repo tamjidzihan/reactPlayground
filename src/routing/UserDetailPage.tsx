@@ -1,10 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
+
 
 const UserDetailPage = () => {
-  const prams = useParams()
-  console.log(prams);
+  type user = {
+    id: string;
+    name: string;
+  }
 
-  return <p>User </p>;
+  const prams = useParams<user>()
+  const [searchParams, setSearchParams] = useSearchParams()
+  console.log(searchParams.toString());
+  const location = useLocation()
+  console.log(location)
+
+
+  return <>
+    <p>User Name : {prams.name}</p>
+    <p>User Id : {prams.id}</p>
+  </>;
 };
 
 export default UserDetailPage;

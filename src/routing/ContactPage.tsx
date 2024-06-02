@@ -7,6 +7,7 @@ const ContactPage = () => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
+
         // Redirect the user to the home page
         navigate('/')
       }}
