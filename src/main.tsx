@@ -28,8 +28,8 @@ ReactDOM.createRoot(
 ).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClinet}>
-      {/* <App /> */}
-      <RouterProvider router={router} />
+      <App />
+      {/* <RouterProvider router={router} /> */}
       <ReactQueryDevtools />
     </QueryClientProvider>
   </React.StrictMode>
