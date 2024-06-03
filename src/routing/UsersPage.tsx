@@ -1,7 +1,10 @@
 import UserListPage from './UserListPage'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import useAuth from './hooks/useAuth'
 
 const UsersPage = () => {
+
+
     return (
         <div className="row">
             <div className="col">

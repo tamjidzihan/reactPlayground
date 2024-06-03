@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
 const ContactPage = () => {
-
   const navigate = useNavigate()
+
   return (
     <form
       onSubmit={(event) => {

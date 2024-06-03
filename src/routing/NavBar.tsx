@@ -11,7 +11,9 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-2">
             <li className="nav-item">
-              <NavLink className=" nav-link" to='/'>
+              <NavLink
+                className={" nav-link"}
+                to='/'>
                 Home
               </NavLink>
             </li>
