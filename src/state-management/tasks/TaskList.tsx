@@ -1,25 +1,17 @@
-import { useContext } from 'react';
-import TaskContext from './contexts/tasksContext';
-import AuthContext from './contexts/loginContext';
+import useAuthStore from '../auth/authStore';
+import useTaskStore from './taskStore';
 
 
 const TaskList = () => {
-  const { tasks, taskDispatch } = useContext(TaskContext)
-  const { status } = useContext(AuthContext)
+  const { tasks, addTask, removeTask } = useTaskStore()
+  const { user } = useAuthStore()
 
 
   return (
     <>
-      <p className=' fw-bold'>Username: <br />{status}</p>
+      <p className=' fw-bold'>Online Username: <br />{user}</p>
       <button
-        onClick={() => taskDispatch({
-          type: 'ADD',
-          task:
-          {
-            id: Date.now(),
-            title: 'Task' + Date.now()
-          }
-        })}
+        onClick={() => addTask({ id: Date.now(), title: (user || 'No user') + ' : ' + Date.now() })}
         className="btn btn-primary my-3"
       >
         Add Task
@@ -33,10 +25,7 @@ const TaskList = () => {
             <span className="flex-grow-1">{task.title}</span>
             <button
               className="btn btn-outline-danger"
-              onClick={() => taskDispatch({
-                type: "DELETE",
-                taskID: task.id
-              })}
+              onClick={() => removeTask(task.id)}
             >
               Delete
             </button>
