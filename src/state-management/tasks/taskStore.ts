@@ -19,4 +19,4 @@ const useTaskStore = create<TaskStore>(set => ({
     }))
 }))
 
-export default useTaskStore;
+export default useTaskStore; 
